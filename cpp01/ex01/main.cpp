@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 12:30:52 by antferna          #+#    #+#             */
-/*   Updated: 2024/05/28 12:50:39 by antferna         ###   ########.fr       */
+/*   Created: 2024/05/28 13:22:30 by antferna          #+#    #+#             */
+/*   Updated: 2024/05/28 13:29:07 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,16 @@
 int main(void){
     std::string name;
 
-    std::cout << "Creating zombie on the stack." << std::endl;
-    std::cout << "Zombie name: " << std::flush;
+    std::cout << "Creating zombie horde." << std::endl;
+    std::cout << "Zombies name: " << std::flush;
     std::cin >> name;
 
-    Zombie zombi1(name);
-    zombi1.announce();
-    
-    std::cout << "Creating zombie on the heap." << std::endl;
-    std::cout << "Zombie name: " << std::flush;
-    std::cin >> name;
-
-    Zombie *zombi2 = newZombie(name);
-    zombi2->announce();
-    delete zombi2;
-
-    std::cout << "Calling randomChump()." << std::endl;
-    randomChump("randi");
+    size_t N = 5;
+    Zombie *zombies = zombieHorde(N, name);
+    for (size_t i = 0; i < N; i++)
+    {
+        zombies[i].announce();
+    }
+    delete [] zombies;
     return 0;
 }
