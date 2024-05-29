@@ -1,7 +1,7 @@
 NAME = HiThisIsBrains
 
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -fsanitize=address,undefined -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SRCS = main.cpp
@@ -10,10 +10,10 @@ SRCS = main.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS):	./%.o : ./%.cpp
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 

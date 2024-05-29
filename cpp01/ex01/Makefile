@@ -1,7 +1,8 @@
 NAME = ZombieHorde
 
 CC = clang++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+
+CFLAGS = -g -fsanitize=address,undefined -Wall -Wextra -Werror -std=c++98
 RM = rm -rf
 
 SRCS = main.cpp Zombie.cpp zombieHorde.cpp
@@ -10,10 +11,10 @@ INCLUDE = Zombie.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS) $(INCLUDE)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(OBJS):	./%.o : ./%.cpp $(INCLUDE)
-	$(CC) $(FLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)
 
