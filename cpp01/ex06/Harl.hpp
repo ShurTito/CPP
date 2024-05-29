@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:40:07 by antferna          #+#    #+#             */
-/*   Updated: 2024/05/29 12:09:02 by antferna         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:09:33 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ private:
 public:
     Harl();
     void complain(std::string level);
+    void filter(std::string level);
 };
 
 #endif

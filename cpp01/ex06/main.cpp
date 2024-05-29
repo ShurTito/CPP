@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/29 11:40:07 by antferna          #+#    #+#             */
-/*   Updated: 2024/05/29 12:09:02 by antferna         ###   ########.fr       */
+/*   Created: 2024/05/29 11:39:57 by antferna          #+#    #+#             */
+/*   Updated: 2024/05/29 12:17:20 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-#define HARL_HPP
+#include "Harl.hpp"
 
-#include <iostream>
-#include <string>
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        std::cout << "Usage: " << argv[0] << " <log level>" << std::endl;
+        return 1;
+    }
 
-class Harl{
-    
-private:
-    void debug(void);
-    void info(void);
-    void warning(void);
-    void error(void);
-    void (Harl::*complaintFunctions[4])(void);
-    std::string levels[4];
-public:
-    Harl();
-    void complain(std::string level);
-};
+    std::string level = argv[1];
+    Harl harl;
+    harl.filter(level);
 
-#endif
+    return 0;
+}
