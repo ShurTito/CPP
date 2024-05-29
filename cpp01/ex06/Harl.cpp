@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/29 11:40:18 by antferna          #+#    #+#             */
-/*   Updated: 2024/05/29 12:23:30 by antferna         ###   ########.fr       */
+/*   Updated: 2024/05/29 15:03:43 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,15 @@ void Harl::filter(std::string level){
     case 0:
         std::cout << "[ DEBUG ]" << std::endl;
         this->debug();
-        break;
     case 1:
         std::cout << "[ INFO ]" << std::endl;
         this->info();
-        break;
     case 2:
         std::cout << "[ WARNING ]" << std::endl;
         this->warning();
-        break;
     case 3:
         std::cout << "[ ERROR ]" << std::endl;
         this->error();
-        break;
     default:
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         break;
