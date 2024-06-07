@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 12:19:08 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/05 12:19:20 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:48:23 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ private:
 
 public:
     WrongCat();
+    WrongCat(const WrongCat& other);
+    WrongCat& operator=(const WrongCat& other);
     ~WrongCat();
 
     void   makeSound() const;

@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 12:04:20 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/05 12:05:14 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/07 14:41:45 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ class Cat : public Animal{
 
 public:
     Cat();
+    Cat(const Cat& other);
+    Cat& operator=(const Cat& other);
     ~Cat();
     void makeSound() const;
 };
