@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:40:19 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/05 17:21:38 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:35:26 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,10 @@ void Character::equip(AMateria *m){
 }
 
 void Character::unequip(int idx){
+    if (idx >= 4){
+        std::cout << "Character " << getName() << " invalid index, cant unequip" << std::endl;
+        return ;
+    }
     if (this->_inventory[idx])
     {
         std::cout << "Character " << getName() << " unequipped " << this->_inventory[idx]->getType() << std::endl;
@@ -71,6 +75,10 @@ void Character::unequip(int idx){
 }
 
 void Character::use(int idx, ICharacter& target){
+    if (idx >= 4){
+        std::cout << "Character " << getName() << " invalid index, cant use" << std::endl;
+        return ;
+    }
     if(this->_inventory[idx]){
         this->_inventory[idx]->use(target);
         std::cout << "Character " << getName() << " used " << this->_inventory[idx]->getType() << std::endl;

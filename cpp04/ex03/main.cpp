@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 17:06:40 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/05 17:06:48 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/10 15:36:24 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,9 @@ int main()
 
     me->use(0, *bob);
     me->use(1, *bob);
+
+    me->use(66, *bob);
+    bob->unequip(8);
 
     delete bob;
     delete me;
