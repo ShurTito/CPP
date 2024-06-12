@@ -4,15 +4,14 @@ CC = clang++
 CFLAGS = -g -fsanitize=address,undefined -Wall -Wextra -Werror -std=c++98 -Wshadow
 RM = rm -rf
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp
-INCLUDE = Bureaucrat.hpp AForm.hpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-$(NAME): $(OBJS) $(INCLUDE)
+$(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-$(OBJS):	./%.o : ./%.cpp $(INCLUDE)
+$(OBJS):	./%.o : ./%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 all: $(NAME)

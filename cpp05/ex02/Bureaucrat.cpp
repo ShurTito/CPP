@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:18 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/11 14:33:25 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/12 12:23:38 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,18 @@ void Bureaucrat::signForm(AForm& form){
     catch(AForm::GradeTooLowException& e)
     {
         std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    }
+    
+}
+
+void Bureaucrat::executeForm(const AForm& form)const{
+    try
+    {
+        form.execute(*this);
+    }
+    catch(std::exception& e)
+    {
+        std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
     }
     
 }

@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:57:27 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/11 14:32:06 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:43:19 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
     int         getGradeToExec() const;
 
     void        beSigned(const Bureaucrat &bureaucrat);
+    virtual void execute(const Bureaucrat& executor)const = 0;
 
     class GradeTooHighException : public std::exception{
         public:
@@ -48,6 +49,13 @@ public:
         public:
         virtual const char* what() const throw(){
             return "Grade is too low!";
+        }
+    };
+
+    class NotSignedException : public std::exception{
+        public:
+        virtual const char* what() const throw(){
+            return "Form not signed";
         }
     };
 };

@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:09 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/11 14:32:21 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/12 11:27:11 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ public:
     void            decrementGrade();
 
     void            signForm(AForm& form);
+    void            executeForm(const AForm& form) const;
 
     class GradeTooHighException : public std::exception{
         public:
