@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:29 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/12 12:37:01 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:39:10 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int main()
 {
     try {
         Bureaucrat bureaucrat("ash", 1);
-        ShrubberyCreationForm form1("Shrubbery");
-        RobotomyRequestForm form2("Robotomy");
-        PresidentialPardonForm form3("President");
+        ShrubberyCreationForm form1("Messi");
+        RobotomyRequestForm form2("ElBicho");
+        PresidentialPardonForm form3("Vinisius");
 
         std::cout << "\n--------------- Form 1 ( Shrubbery ) ---------------" << std::endl;
         bureaucrat.signForm(form1);
