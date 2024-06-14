@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:57:02 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/11 14:33:37 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/14 11:49:50 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ AForm::AForm(const std::string &name, int gradeToSign, int gradeToExec) : _name(
     if(gradeToSign < 1)
         throw AForm::GradeTooHighException();
     else if(gradeToSign > 150)
-        throw AForm::GradeTooHighException();    
+        throw AForm::GradeTooLowException();    
 }
 
 AForm::AForm(const AForm& other) : _name(other.getName()), _gradeToSign(other.getGradeToSign()), _gradeToExec(other.getGradeToExec()){}
