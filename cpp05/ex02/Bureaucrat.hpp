@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:09 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/12 11:27:11 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:40:09 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
     int                 _grade;
     
 public:
+    Bureaucrat();
     Bureaucrat(const std::string& name, int grade);
     Bureaucrat(const Bureaucrat& other);
     ~Bureaucrat();

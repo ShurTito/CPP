@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:57:27 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/11 13:15:06 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:34:11 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ private:
     const int           _gradeToSign;
     const int           _gradeToExec;
 public:
+    Form();
     Form(const std::string &name, int gradeToSign, int gradeToExec);
     Form(const Form& other);
     ~Form();

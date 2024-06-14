@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 11:56:38 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/12 11:58:28 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:41:31 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ class RobotomyRequestForm : public AForm{
 private:
     const std::string   _target;
 public:
+    RobotomyRequestForm();
     RobotomyRequestForm(const std::string& target);
     RobotomyRequestForm(const RobotomyRequestForm& other);
     ~RobotomyRequestForm();

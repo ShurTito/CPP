@@ -6,11 +6,14 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 11:42:18 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/11 12:41:51 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:32:41 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() : _name("default name"), _grade(150){}
+
 
 Bureaucrat::Bureaucrat(const std::string& name, int grade) : _name(name), _grade(grade){
     if(grade < 1)

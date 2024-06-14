@@ -6,11 +6,13 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 12:57:02 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/14 11:48:25 by antferna         ###   ########.fr       */
+/*   Updated: 2024/06/14 14:35:06 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form() : _name("name"),  _signed(false), _gradeToSign(150), _gradeToExec(150){}
 
 Form::Form(const std::string &name, int gradeToSign, int gradeToExec) : _name(name),  _signed(false), _gradeToSign(gradeToSign), _gradeToExec(gradeToExec){
     if(gradeToSign < 1)
