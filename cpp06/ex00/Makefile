@@ -4,7 +4,7 @@ CC = clang++
 CFLAGS = -g -fsanitize=address,undefined -Wall -Wextra -Werror -std=c++98 -Wshadow
 RM = rm -rf
 
-SRCS = main.cpp Converter.cpp
+SRCS = main.cpp ScalarConverter.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
