@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 15:15:41 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/08 13:15:16 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/08 13:21:11 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main(){
     Span sp2 = Span(10000);
     std::list<int> lst;
     std::srand(time(NULL));
-    for(int i = 0; i < 5000; i++){
+    for(int i = 0; i < 10000; i++){
        lst.push_back(rand() % 100000);
     }
     try{
