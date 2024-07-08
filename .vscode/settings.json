@@ -52,7 +52,8 @@
         "sstream": "cpp",
         "fstream": "cpp",
         "list": "c",
-        "*.tpp": "c"
+        "*.tpp": "c",
+        "mutantstack.hpp": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
