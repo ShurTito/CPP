@@ -6,11 +6,18 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 12:55:35 by antferna          #+#    #+#             */
-/*   Updated: 2024/06/25 13:21:04 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/08 11:36:22 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "easyfind.hpp"
+
+class ValueNotFoundException: public std::exception{
+    public:
+        const char *what() const throw(){
+            return ("Value not found");
+        }
+};
 
 template <typename T>
 void easyfind(T&cont, int value){
