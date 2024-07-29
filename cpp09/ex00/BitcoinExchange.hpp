@@ -6,13 +6,18 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:10:20 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/08 17:26:36 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/29 14:51:51 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
 #include <iostream>
+#include <fstream>
+#include <map>
+#include <string>
+#include <cstdlib>
+
 
 class BitcoinExchange
 {
@@ -25,8 +30,9 @@ class BitcoinExchange
         ~BitcoinExchange();
         BitcoinExchange & operator=(const BitcoinExchange & other);
 
-        void extractFiles(std::ifstream &fileStream, std::string &dbStream);
-        void setDbNode(const std::string &dateStr, const double &numDbValue);
-        void getValueFromDb(const std::string &dateStr, const double &val);
+        void extractInputFile(std::ifstream &fileStream);
+        void extractDbFile(std::ifstream &dbStream);
+        void setDbNode(const std::string &date, const double &value);
+        void getValueFromDb(const std::string &date, const double &value);
         
 };
