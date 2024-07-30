@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:10:20 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/29 14:51:51 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/30 11:55:26 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class BitcoinExchange
 
         void extractInputFile(std::ifstream &fileStream);
         void extractDbFile(std::ifstream &dbStream);
-        void setDbNode(const std::string &date, const double &value);
+        void addToMap(const std::string &date, const double &value);
         void getValueFromDb(const std::string &date, const double &value);
         
 };

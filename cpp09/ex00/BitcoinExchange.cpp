@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:14:09 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/29 15:02:29 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/30 12:00:58 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 
 static bool dayCheck(int y, int m, int d){
     if(d < 0 || d > 31)
+        return false;
+    if(m < 0 || m > 12)
         return false;
     if(m == 2){
         if(y % 4 == 0 && (y % 100 != 0 || y % 400 == 0)){
@@ -126,7 +128,7 @@ static void saveDBEntry(std::string &str, BitcoinExchange &be){
    int i = str.find(',');
    std::string date = str.substr(0, i);
    double value = atof(str.substr(i + 1).c_str());
-   be.setDbNode(date, value);
+   be.addToMap(date, value);
 }
 
 void BitcoinExchange::extractDbFile(std::ifstream &dbStream){
@@ -137,7 +139,7 @@ void BitcoinExchange::extractDbFile(std::ifstream &dbStream){
     }
 }
 
-void BitcoinExchange::setDbNode(const std::string &date, const double &value){
+void BitcoinExchange::addToMap(const std::string &date, const double &value){
     this->_btc.insert(std::pair<std::string, double>(date, value));
 }
 
