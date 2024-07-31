@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 12:48:13 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/30 14:48:34 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/31 12:25:47 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ public:
     ~PmergeMe();
     PmergeMe &operator=(const PmergeMe &other);
     
+    int     getSize() const;
     void    printVector();
     void    printList();
     void    mergeVector();
