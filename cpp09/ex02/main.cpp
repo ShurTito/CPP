@@ -6,14 +6,12 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 12:48:29 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/31 13:04:15 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/31 13:18:02 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 #include <ctime>
-# include <sys/time.h>
-
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
