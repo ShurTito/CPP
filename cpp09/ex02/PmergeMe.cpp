@@ -6,7 +6,7 @@
 /*   By: antferna <antferna@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/30 12:48:23 by antferna          #+#    #+#             */
-/*   Updated: 2024/07/31 12:25:59 by antferna         ###   ########.fr       */
+/*   Updated: 2024/07/31 13:04:30 by antferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ PmergeMe::PmergeMe(char **av) : _size(0)
     for (int i = 1; av[i]; i++)
     {
         value = std::atoi(av[i]);
+        if(value < 0)
+            throw std::invalid_argument("Error: Negative values are not allowed");
         if(std::find(_vector.begin(), _vector.end(), value) == _vector.end() && value >= 0){
             _vector.push_back(value);
             _list.push_back(value);
@@ -101,28 +103,24 @@ static void binaryInsertList(std::list<int> &list, int value){
 
 
 void PmergeMe::mergeList(){
-    if(_size <= 1)
+    if (_size <= 1)
         return;
-        
+
     std::list<std::pair<int, int> > pairs;
     std::list<int>::iterator it = _list.begin();
-    while(it != _list.end()){
+
+    while (it != _list.end()) {
         int first = *it;
-        it++;
-        if(it == _list.end()){
+        ++it;
+        if (it != _list.end()) {
             int second = *it;
             ++it;
-            if(first > second)
+            if (first > second)
                 pairs.push_back(std::make_pair(second, first));
             else
                 pairs.push_back(std::make_pair(first, second));
-        }else{
-            int second = *it;
-            ++it;
-            if(first > second)
-                pairs.push_back(std::make_pair(second, first));
-            else
-                pairs.push_back(std::make_pair(first, INT_MAX));
+        } else {
+            pairs.push_back(std::make_pair(first, INT_MAX));
         }
     }
 
